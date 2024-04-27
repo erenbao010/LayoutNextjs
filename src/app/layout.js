@@ -1,5 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Layout from "@/components/Layout";
+import NavBarSide from "@/components/NavBarSide";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import TopLeftImg from "@/components/topLeftImg";
+import { AnimatePresence, motion } from "framer-motion";
+import Transition from "@/components/Transition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div
+          className={`page bg-site bg-blue-400 text-white bg-cover bg-no-repeat relative`}
+        >
+          <Layout></Layout>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
