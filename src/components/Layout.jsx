@@ -9,6 +9,7 @@ import TopLeftImg from "@/components/topLeftImg";
 import { AnimatePresence, motion } from "framer-motion";
 import Transition from "@/components/Transition";
 import { useRouter } from "next/navigation";
+import Particle from "@/components/Particle";
 function Layout({ children }) {
   const router = useRouter();
   return (
@@ -17,8 +18,8 @@ function Layout({ children }) {
         <motion.div key={router.route} className="h-full"></motion.div>
         <Transition></Transition>
       </AnimatePresence>
+      <Particle></Particle>
       <TopLeftImg></TopLeftImg>
-      <NavBarSide></NavBarSide>
       {children}
     </div>
   );
